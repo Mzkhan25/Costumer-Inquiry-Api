@@ -12,6 +12,7 @@ namespace Entities.Commons
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime DateAdded { get; set; }
         public DateTime DateModified { get; set; }
         public string AddedBy { get; set; }
