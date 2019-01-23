@@ -50,7 +50,8 @@ namespace Repository.Repository
                 dbItem.Amount = transaction.Amount;
                 dbItem.CurrencyCode = transaction.CurrencyCode;
                 dbItem.TransactionStatus = transaction.TransactionStatus;
-                
+                dbItem.CustomerId = transaction.CustomerId;
+
                 if (isNew)
                 {
                     _db.Entry(dbItem).State = EntityState.Added;
