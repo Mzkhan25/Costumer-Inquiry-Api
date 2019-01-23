@@ -7,6 +7,6 @@ namespace Contracts.IRepository
     {
         IQueryable<Customer> GetAll();
         TransactionResult Save(Customer customer);
-        TransactionResult Delete(Customer customer);
+        TransactionResult Delete(int id);
     }
 }
