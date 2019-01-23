@@ -10,13 +10,14 @@ namespace Entities.Models
 {
     public class Customer : BaseModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
+        // Class for Customer management
+
         [Range(1, 10, ErrorMessage = "Id can be max 10 digits long")]
         [Required(ErrorMessage = "Customer Id must be specified")]
         public int CustomerId { get; set; }
 
-        [MaxLength(25, ErrorMessage = "Name can noon exceed 30 characters")]
+        [MaxLength(25, ErrorMessage = "Name can not exceed 30 characters")]
         public string Name { get; set; }
 
         [Range(1, 25, ErrorMessage = "Email can be max 25 digits long")]
