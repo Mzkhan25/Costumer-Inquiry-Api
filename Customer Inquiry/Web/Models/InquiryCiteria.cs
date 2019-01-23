@@ -6,13 +6,13 @@ using System.Web;
 
 namespace Web.Models
 {
-    public class InquiryCiteria
+    public class InquiryCriteria
     {
 
         [MaxLength(10)]
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
 
-        [MaxLength(25)]
+      //  [MaxLength(25)]
         [EmailAddress]
         public string Email { get; set; }
 
