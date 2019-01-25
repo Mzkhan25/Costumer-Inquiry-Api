@@ -13,7 +13,7 @@ namespace Repository
         public DataBaseContext()
         {
             Database.Connection.ConnectionString =
-                @"Data Source=GRIMREAPER;Initial Catalog=WATG_SLBenefitsPortal;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                @"Data Source=DESKTOP-D222E22\SQLEXPRESS;Initial Catalog=CustomerInquiry;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         }
 

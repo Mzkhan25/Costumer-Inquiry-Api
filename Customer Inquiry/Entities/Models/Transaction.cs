@@ -12,6 +12,6 @@ namespace Entities.Models
         public float Amount { get; set; }
         public CurrencyCode CurrencyCode { get; set; }
         public TransactionStatus TransactionStatus { get; set; }
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
     }
 }

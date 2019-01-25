@@ -13,6 +13,7 @@ namespace Web
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.Filters.Add(new ValidateModelAttribute());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

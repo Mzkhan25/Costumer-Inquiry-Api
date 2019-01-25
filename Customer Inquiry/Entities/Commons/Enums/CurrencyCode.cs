@@ -2,9 +2,9 @@
 {
     public enum CurrencyCode
     {
-        USD,
-        JPY, 
-        THB, 
-        SGD
+        USD = 1,
+        JPY = 2, 
+        THB = 3, 
+        SGD = 4
     }
 }
