@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using Contracts;
 using Contracts.IRepository;
 using Entities.Models;
@@ -15,8 +13,9 @@ namespace Repository.Repository
 
         public CustomerRepository()
         {
-            _db= new DataBaseContext();
+            _db = new DataBaseContext();
         }
+
         public CustomerRepository(IDataBaseContext db)
         {
             _db = db;
@@ -58,6 +57,7 @@ namespace Repository.Repository
                     _db.Entry(dbItem).State = EntityState.Added;
                     _db.Customers.Add(dbItem);
                 }
+
                 _db.SaveChanges();
                 result.HasError = false;
             }
@@ -65,6 +65,7 @@ namespace Repository.Repository
             {
                 result = TransactionError(exception);
             }
+
             return result;
         }
 
@@ -81,6 +82,7 @@ namespace Repository.Repository
                     dbitem.DateModified = DateTime.UtcNow;
                     _db.Entry(dbitem).State = EntityState.Modified;
                 }
+
                 _db.SaveChanges();
                 result.HasError = false;
             }
@@ -88,8 +90,10 @@ namespace Repository.Repository
             {
                 result = TransactionError(exception);
             }
+
             return result;
         }
+
         private static TransactionResult TransactionError(Exception exception)
         {
             var transactionResult = new TransactionResult

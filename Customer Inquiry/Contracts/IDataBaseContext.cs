@@ -9,11 +9,10 @@ namespace Contracts
     {
         DbSet<Customer> Customers { get; set; }
         DbSet<Transaction> Transactions { get; set; }
-        
+
         int SaveChanges();
         Task<int> SaveChangesAsync();
         DbEntityEntry Entry(object o);
         void Dispose();
-
     }
 }

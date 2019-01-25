@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using Contracts;
 using Contracts.IRepository;
 using Entities.Models;
@@ -12,10 +10,12 @@ namespace Repository.Repository
     public class TransactionRepository : ITransactionRepository
     {
         private readonly IDataBaseContext _db;
+
         public TransactionRepository()
         {
             _db = new DataBaseContext();
         }
+
         public TransactionRepository(IDataBaseContext db)
         {
             _db = db;
@@ -41,11 +41,11 @@ namespace Repository.Repository
                 {
                     dbItem = transaction;
                     dbItem.DateAdded = DateTime.UtcNow;
-                    
+
                     isNew = true;
                 }
-                
-                
+
+
                 dbItem.DateModified = DateTime.UtcNow;
                 dbItem.Amount = transaction.Amount;
                 dbItem.CurrencyCode = transaction.CurrencyCode;
@@ -57,6 +57,7 @@ namespace Repository.Repository
                     _db.Entry(dbItem).State = EntityState.Added;
                     _db.Transactions.Add(dbItem);
                 }
+
                 _db.SaveChanges();
                 result.HasError = false;
             }
@@ -64,6 +65,7 @@ namespace Repository.Repository
             {
                 result = TransactionError(exception);
             }
+
             return result;
         }
 
@@ -80,6 +82,7 @@ namespace Repository.Repository
                     dbitem.DateModified = DateTime.UtcNow;
                     _db.Entry(dbitem).State = EntityState.Modified;
                 }
+
                 _db.SaveChanges();
                 result.HasError = false;
             }
@@ -87,8 +90,10 @@ namespace Repository.Repository
             {
                 result = TransactionError(exception);
             }
+
             return result;
         }
+
         private static TransactionResult TransactionError(Exception exception)
         {
             var transactionResult = new TransactionResult

@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Web.Models
 {
-    
     public class InquiryCriteria
     {
-
-        [Range(0,9999999999,ErrorMessage ="Invalid Customer Id")]
+        [Range(0, 9999999999, ErrorMessage = "Invalid Customer Id")]
         public long CustomerId { get; set; }
 
-      //  [MaxLength(25)]
-        [EmailAddress(ErrorMessage ="Invalid Email")]
+        //  [MaxLength(25)]
+        [EmailAddress(ErrorMessage = "Invalid Email")]
         public string Email { get; set; }
-
     }
 }
