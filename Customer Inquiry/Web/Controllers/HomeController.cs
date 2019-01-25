@@ -12,7 +12,7 @@ namespace Web.Controllers
         {
             ViewBag.Title = "Home Page";
 
-            return View();
+            return new RedirectResult("~/swagger/ui/index");
         }
     }
 }
