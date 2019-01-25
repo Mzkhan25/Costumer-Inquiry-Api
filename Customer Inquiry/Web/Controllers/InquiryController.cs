@@ -61,12 +61,24 @@ namespace Web.Controllers
                     .ToList();
 
 
-
-                return new JsonResult()
+                if (result.Count > 0)
                 {
-                    Data = result,
-                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                };
+                    return new JsonResult()
+                    {
+                        Data = result,
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
+                }
+                else {
+                    return new JsonResult()
+                    {
+                        Data = "Not Found",
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
+
+                }
+
+
             }
             else
                 return null;

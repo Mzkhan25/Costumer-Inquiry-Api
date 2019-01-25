@@ -6,14 +6,15 @@ using System.Web;
 
 namespace Web.Models
 {
+    
     public class InquiryCriteria
     {
 
-        [MaxLength(10)]
-        public string CustomerId { get; set; }
+        [Range(0,9999999999,ErrorMessage ="Invalid Customer Id")]
+        public int CustomerId { get; set; }
 
       //  [MaxLength(25)]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage ="Invalid Email")]
         public string Email { get; set; }
 
     }

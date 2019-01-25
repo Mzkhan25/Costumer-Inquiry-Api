@@ -13,10 +13,9 @@ namespace Entities.Models
 
         // Class for Customer management
 
-        [MinLength(1, ErrorMessage = "Id can be max 10 digits long")]
-        [MaxLength(10, ErrorMessage = "Id can be max 10 digits long")]
+        [Range(1000000000, 9999999999,ErrorMessage ="Customer Id Must be 10 Digits")]
         [Required(ErrorMessage = "Customer Id must be specified")]
-        public string CustomerId { get; set; }
+        public int CustomerId { get; set; }
 
         [MaxLength(25, ErrorMessage = "Name can not exceed 30 characters")]
         public string Name { get; set; }

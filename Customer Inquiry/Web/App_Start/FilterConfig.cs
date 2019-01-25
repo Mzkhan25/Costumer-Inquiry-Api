@@ -21,7 +21,11 @@ namespace Web
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            if (actionContext.ModelState.IsValid == false)
+            if (actionContext.ModelState.Keys.Count==0)
+            {
+                actionContext.Response = actionContext.Request.CreateErrorResponse(HttpStatusCode.BadRequest, "No Inquiry Criteria");
+            }
+            if (actionContext.ModelState.IsValid == false || actionContext.ModelState==null)
             {
                 actionContext.Response = actionContext.Request.CreateErrorResponse(
                     HttpStatusCode.BadRequest, actionContext.ModelState);
