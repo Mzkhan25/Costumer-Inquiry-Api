@@ -11,7 +11,7 @@ namespace Web.Models
     {
 
         [Range(0,9999999999,ErrorMessage ="Invalid Customer Id")]
-        public int CustomerId { get; set; }
+        public long CustomerId { get; set; }
 
       //  [MaxLength(25)]
         [EmailAddress(ErrorMessage ="Invalid Email")]

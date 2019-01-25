@@ -15,7 +15,7 @@ namespace Entities.Models
 
         [Range(1000000000, 9999999999,ErrorMessage ="Customer Id Must be 10 Digits")]
         [Required(ErrorMessage = "Customer Id must be specified")]
-        public int CustomerId { get; set; }
+        public long CustomerId { get; set; }
 
         [MaxLength(25, ErrorMessage = "Name can not exceed 30 characters")]
         public string Name { get; set; }

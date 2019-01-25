@@ -9,9 +9,9 @@ namespace Entities.Models
 {
     public class Transaction : BaseModel
     {
-        public float Amount { get; set; }
+        public double Amount { get; set; }
         public CurrencyCode CurrencyCode { get; set; }
         public TransactionStatus TransactionStatus { get; set; }
-        public int CustomerId { get; set; }
+        public long CustomerId { get; set; }
     }
 }
