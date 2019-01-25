@@ -31,7 +31,7 @@ namespace Web.Controllers
             _transactionRepository = new TransactionRepository();
         }
 
-        // GET api/Inquiry/5
+        
         [ValidateModel]
         public ActionResult Get([FromUri] InquiryCriteria inquiryCriteria)
         {
